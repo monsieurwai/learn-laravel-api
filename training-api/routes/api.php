@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-// use Symfony\Component\Routing\Route;
+// use Symfony\Component\Routing\Route
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
+| Users
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware('auth:api')->get('user', function (Request $request) {
+    return $request->user();
+});
+
+/*
+|--------------------------------------------------------------------------
 | Articles
 |--------------------------------------------------------------------------
 */
@@ -27,10 +37,10 @@ Route::get('articles', 'ArticleController@getAllArticles');
 Route::get('article/{id}', 'ArticleController@getArticle');
 
 //create articles
-Route::post('articles','ArticleController@createArticle');
+Route::post('articles', 'ArticleController@createArticle');
 
 //update articles
 Route::put('article/{id}', 'ArticleController@updateArticle');
 
 //delete articles
-Route::delete('article/{id}','ArticleController@deleteArticle');
+Route::delete('article/{id}', 'ArticleController@deleteArticle');

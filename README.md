@@ -5,7 +5,7 @@
     - Dernier article de chaque blog
   
   # Objectifs: apprendre à créer de belles API avec Laravel
-    - Comprendre les bonnes pratiques d'une API (méthodes, routes, réponses etc...)
+    - Comprendre les bonnes pratiques d'une API (méthodes, routes, réponses etc...) ✅
     - Comprendre Oauth2 et JWT
 
   # api.php
@@ -20,7 +20,7 @@
     - Tu sais retourner une réponse avec un code (200, 401 etc...) ✅
     
   # En général :
-    - Tu comprends ce qu'est un Modèle dans laravel et comment le customiser (champs visible/hidden - fillable/guarded et pourquoi pas les mutations)
+    - Tu comprends ce qu'est un Modèle dans laravel et comment le customiser (champs visible/hidden - fillable/guarded et pourquoi pas les mutations) ✅
     - Tu comprends ce qu'est Eloquent et l'utiliser ✅
     - Tu sais gérer les migrations et les customiser
     - Tu sais comment fonctionne un middleware et comment l'exploiter
