@@ -7,12 +7,22 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+    /*
+        GET
+        /articles
+        get all articles
+    */
     public function getAllArticles()
     {
         $students = Article::get()->toJson(JSON_PRETTY_PRINT);
         return response($students, 200);
     }
 
+    /*
+        POST
+        /articles
+        create article
+    */
     public function createArticle(Request $request)
     {
         $article = new Article;
@@ -25,6 +35,11 @@ class ArticleController extends Controller
         ], 201);
     }
 
+     /*
+        GET
+        /articles/{id}
+        get article by id
+    */
     public function getArticle($id)
     {
         if (Article::where('id', $id)->exists()) {
@@ -37,6 +52,11 @@ class ArticleController extends Controller
         }
     }
 
+     /*
+        PUT
+        /article/{id}
+        Update an article
+    */
     public function updateArticle(Request $request, $id)
     {
         if (Article::where('id', $id)->exists()) {
@@ -56,6 +76,11 @@ class ArticleController extends Controller
         }
     }
 
+     /*
+        DELETE
+        /article/{id}
+        delete article by id
+    */
     public function deleteArticle($id)
     {
         if (Article::where('id', $id)->exists()) {
