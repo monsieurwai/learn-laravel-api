@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+// use Symfony\Component\Routing\Route;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,22 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+/*
+|--------------------------------------------------------------------------
+| Articles
+|--------------------------------------------------------------------------
+*/
+//get all articles
+Route::get('articles', 'ArticleController@getAllArticles');
+
+//get article by id
+Route::get('article/{id}', 'ArticleController@getArticle');
+
+//create articles
+Route::post('articles','ArticleController@createArticle');
+
+//update articles
+Route::put('article/{id}', 'ArticleController@updateArticle');
+
+//delete articles
+Route::delete('article/{id}','ArticleController@deleteArticle');
